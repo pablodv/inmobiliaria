@@ -1,0 +1,39 @@
+<div class="block">
+  
+  <%= render :partial => 'secondary_navigation', :locals => { :klass => 'list' } %>
+
+  <div class="content">          
+    <h2 class="title">Properties</h2>
+    <div class="inner">
+      <table class="table">
+        <tr>             
+          <th>Kind</th>
+          <th>Operation</th>
+          <th>Price</th>
+          <th>State</th>
+          <th class="last">&nbsp;</th>
+        </tr>
+        <% @properties.each do |property| -%>
+          <tr class="<%= cycle("odd", "even") %>">
+            <td><%= property.kind %></td>
+            <td><%= property.operation %></td>
+            <td><%= property.price %></td>
+            <td><%= property.state %></td>
+            <td class="last">
+              <%= link_to "Show", property_path(property) %> |
+              <%= link_to "Edit", edit_property_path(property) %> |
+              <%= link_to "Delete", property_path(property), :method => :delete, :confirm => "Are you sure?" %>
+            </td>
+          </tr>          
+        <% end -%>
+      </table>
+      <div class="actions-bar wat-cf">
+        <div class="actions"></div>
+        <%#= will_paginate @properties  %>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

@@ -1,0 +1,13 @@
+<div class="block">
+  <%= render :partial => 'secondary_navigation', :locals => { :klass => 'edit', :property => @property } %>
+  <div class="content">            
+    <h2 class="title">Edit Property</h2>
+    <div class="inner">
+      <%= form_for @property, :url => property_path(@property), :html => { :class => :form } do |f| -%>
+        <%= render :partial => "form", :locals => {:f => f} %>
+      <% end -%>
+    </div>
+  </iv>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

@@ -1,0 +1,35 @@
+<div class="block">
+  
+  <%= render :partial => 'secondary_navigation', :locals => { :klass => 'list' } %>
+  
+  <div class="content">          
+    <h2 class="title">All Owners</h2>
+    <div class="inner">
+      <table class="table">
+        <tr>             
+          <th>First Name</th>
+          <th>Second Name</th>
+          <th class="last">&nbsp;</th>
+        </tr>
+        <% @owners.each do |owner| -%>
+          <tr class="<%= cycle("odd", "even") %>">
+            <td><%= owner.first_name %></td>
+            <td><%= owner.second_name %></td>
+            <td class="last">
+              <%= link_to "Show", owner_path(owner) %> |
+              <%= link_to "Edit", edit_owner_path(owner) %> |
+              <%= link_to "Delete", owner_path(owner), :method => :delete, :confirm => "Are you sure?" %>
+            </td>
+          </tr>          
+        <% end -%>
+      </table>
+      <div class="actions-bar wat-cf">
+        <div class="actions"></div>
+        <%#= will_paginate @owners  %>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

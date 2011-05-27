@@ -1,0 +1,13 @@
+<div class="block">
+  <%= render :partial => 'secondary_navigation', :locals => { :klass => 'edit', :owner => @owner } %>
+  <div class="content">            
+    <h2 class="title">Edit Owner</h2>
+    <div class="inner">
+      <%= form_for @owner, :url => owner_path(@owner), :html => { :class => :form } do |f| -%>
+        <%= render :partial => "form", :locals => {:f => f} %>
+      <% end -%>
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

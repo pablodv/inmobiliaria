@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  description: MyText
+  state: MyString
+  address: MyString
+  owner_id: 1
+  tenant_id: 1
+  rooms: 1
+  bathrooms: 1
+
+two:
+  description: MyText
+  state: MyString
+  address: MyString
+  owner_id: 1
+  tenant_id: 1
+  rooms: 1
+  bathrooms: 1

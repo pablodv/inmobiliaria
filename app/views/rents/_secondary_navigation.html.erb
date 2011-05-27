@@ -1,0 +1,20 @@
+<div class="secondary-navigation">
+  <ul class="wat-cf">
+    <li class="first <%= klass == 'list' ? 'active' : '' %>">
+    	<%= link_to "List", rents_path  %>
+  	</li>
+    <li class="<%= klass == 'new' ? 'active' : '' %>">
+    	<%= link_to "New", new_rent_path %>
+  	</li>
+  	<% if klass == 'edit' %>
+	    <li class="active">
+	    	<%= link_to "Edit", edit_rent_path(rent) %>
+	  	</li>
+  	<% end %>
+  	<% if klass == 'show' %>
+	  	<li class="active">
+	  		<%= link_to "Show", rent_path(rent) %>
+	  	</li>
+  	<% end %>
+  </ul>
+</div>

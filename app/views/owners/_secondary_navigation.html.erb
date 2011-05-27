@@ -1,0 +1,20 @@
+<div class="secondary-navigation">
+  <ul class="wat-cf">
+    <li class="first <%= klass == 'list' ? 'active' : '' %>">
+    	<%= link_to "#{t("web-app-theme.list", :default => "List")}", owners_path  %>
+  	</li>
+    <li class="<%= klass == 'new' ? 'active' : '' %>">
+    	<%= link_to "#{t("web-app-theme.new", :default => "New")}", new_owner_path %>
+  	</li>
+  	<% if klass == 'edit' %>
+	    <li class="active">
+	    	<%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_owner_path(owner) %>
+	  	</li>
+  	<% end %>
+  	<% if klass == 'show' %>
+	  	<li class="active">
+	  		<%= link_to "#{t("web-app-theme.show", :default => "Show")}", owner_path(owner) %>
+	  	</li>
+  	<% end %>
+  </ul>
+</div>          

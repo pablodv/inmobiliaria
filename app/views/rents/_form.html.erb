@@ -1,0 +1,32 @@
+  <div class="group">
+    <%= f.label :property_id, :class => :label %>
+    <%= f.select :property_id, Property.all.map{ |p| [ p.id , p.id ] } %>
+  </div>
+
+  <div class="group">
+    <%= f.label :owner_id, :class => :label %>
+    <%= f.select :owner_id, Owner.all.map{ |o| [o.full_name, o.id] } %>
+  </div>
+
+  <div class="group">
+    <%= f.label :tenant_id, :class => :label %>
+    <%= f.select :tenant_id, Tenant.all.map{ |t| [t.full_name, t.id] } %>
+  </div>
+
+  <div class="group">
+    <%= f.label :start_date, :class => :label %>
+    <%= f.date_select :start_date, :class => 'date_select' %>
+  </div>
+
+  <div class="group">
+    <%= f.label :end_date, :class => :label %>
+    <%= f.date_select :end_date, :class => 'date_select' %>
+  </div>
+        
+<div class="group navform wat-cf">
+  <button class="button" type="submit">
+    <%= image_tag("web-app-theme/icons/tick.png") %> Save
+  </button>
+  <span class="text_button_padding">or</span>
+	<%= link_to "Cancel", rents_path, :class => "text_button_padding link_button" %>
+</div>
