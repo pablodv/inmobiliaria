@@ -408,3 +408,9 @@ button.button:active, a.button:active {
 .link_button{
   cursor: pointer;
 }
+
+#map{
+  position: absolute;
+  top: 187px;
+  right: 435px;
+}

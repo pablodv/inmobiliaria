@@ -1,2 +1,8 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+function generate_static_map(size, lat, lng, icon_url, zoom){
+    img = "http://maps.google.com/maps/api/staticmap?size="+size+
+        "&markers=shadow:false|"+lat+","+lng+"|icon:"+icon_url+
+        "&zoom="+zoom+"&sensor=false";
+
+    $("#map img").attr('src', img);
+    return false;
+}

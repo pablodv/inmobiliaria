@@ -3,16 +3,18 @@
   <div class="content">
     <div class="inner">
       
-        <p><b>Kind</b>        <%= @property.kind %></p>
-        <p><b>Operation</b>   <%= @property.operation %></p>
-        <p><b>Address</b>     <%= @property.address %></p>
-        <p><b>Rooms</b>       <%= @property.rooms %></p>
-        <p><b>Bathrooms</b>   <%= @property.bathrooms %></p>
-        <p><b>Description</b> <%= @property.description %></p>
-        <p><b>Price</b>       <%= @property.price %></p>
-        <p><b>State</b>       <%= @property.state %></p>
-        <p><b>Owner</b>       <%= @property.owner.full_name %></p>
+      <p><b>Kind</b>        <%= @property.kind %></p>
+      <p><b>Operation</b>   <%= @property.operation %></p>
+      <p><b>Address</b>     <%= @property.address %></p>
+      <p><b>Rooms</b>       <%= @property.rooms %></p>
+      <p><b>Bathrooms</b>   <%= @property.bathrooms %></p>
+      <p><b>Description</b> <%= @property.description %></p>
+      <p><b>Price</b>       <%= @property.price %></p>
+      <p><b>State</b>       <%= @property.state %></p>
+      <p><b>Owner</b>       <%= @property.owner.full_name %></p>
         
+      <div id="map"><img src='' /></div>    
+
       <div class="wat-cf">
         <%= link_to image_tag("web-app-theme/icons/application_edit.png") + "Edit", edit_property_path(@property), :class => "button" %> 
         <%= link_to image_tag("web-app-theme/icons/cross.png") + "Delete", property_path(@property), :method => "delete", :class => "button", :confirm => "Are you sure?" %>
@@ -21,4 +23,5 @@
   </div>
 </div>
 
-<% content_for :sidebar, render(:partial => 'sidebar') -%>
+<% content_for :sidebar, render(:partial => 'shared/sidebar') -%>
+<%= javascript_tag "generate_static_map('320x300', #{@property.lat}, #{@property.lng}, null, 16);" %>

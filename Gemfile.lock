@@ -45,6 +45,7 @@ GEM
     inherited_resources (1.2.1)
       has_scope (~> 0.5.0)
       responders (~> 0.6.0)
+    json (1.5.1)
     mail (2.2.15)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
@@ -90,6 +91,7 @@ DEPENDENCIES
   devise (= 1.1.5)
   friendly_id (= 3.1.7.pre)
   inherited_resources (~> 1.2.1)
+  json
   rails (= 3.0.0)
   sqlite3-ruby
   web-app-theme (>= 0.6.2)
